@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+  api:
+    build: ./
+    container_name: volt_home_api
+    ports:
+      - 3001:3001
+    volumes:
+      - ./:/usr/app
+      - /usr/app/node_modules
+    command: /bin/sh -c "npm run seed && npm run start"
